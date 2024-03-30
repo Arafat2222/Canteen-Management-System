@@ -1,0 +1,56 @@
+{% load static %}
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel = "stylesheet" href= "{% static 'CSS/style.css' %}" />
+    <title>canteen</title>
+  </head>
+  <body>
+    <div class="menu-bar">
+      <h1 class="logo">UAP<span>Canteen.</span></h1>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About us</a></li>
+        <li><a href="#">Menu <i class="fas fa-caret-down"></i></a>
+
+            <div class="dropdown-menu">
+                <ul>
+                  <li><a href="{% url 'breakfast' %}">Breakfast</a></li>
+                  <li><a href="{% url 'lunch' %}">Lunch</a></li>
+                  <!-- <li>
+                    <a href="#">Team <i class="fas fa-caret-right"></i></a>
+                    
+                    <div class="dropdown-menu-1">
+                      <ul>
+                        <li><a href="#">Team-1</a></li>
+                        <li><a href="#">Team-2</a></li>
+                        <li><a href="#">Team-3</a></li>
+                        <li><a href="#">Team-4</a></li>
+                      </ul>
+                    </div>
+                  </li> -->
+                  <li><a href="{% url 'others' %}">Others</a></li>
+                </ul>
+              </div>
+        </li>
+        <li><a href="{% url 'cart' %}">Cart</a>
+        </li>
+        <li><a href="{% url 'login' %}">Log in / Sign up</a></li>
+      </ul>
+    </div>
+
+    <div class="hero">
+      &nbsp;
+    </div>
+
+    <div>
+        {% block content %}
+
+        {% endblock %}
+  </div>
+  </body>
+</html>
